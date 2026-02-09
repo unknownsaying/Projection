@@ -1,0 +1,9 @@
+Display Configuration Matrix:
+┌──────────────┬──────────────┬──────────────┬──────────────┐
+│   Type       │ Resolution   │ Refresh Rate │ Surface      │
+├──────────────┼──────────────┼──────────────┼──────────────┤
+│ Main Wall 1  │ 7680x4320    │ 120Hz        │ Flat         │
+│ Hologram 1   │ 4096x4096    │ 60Hz         │ Volumetric   │
+│ Floor        │ 8192x8192    │ 30Hz         │ Interactive  │
+│ Dome         │ 8192x4096    │ 90Hz         │ Curved       │
+└──────────────┴──────────────┴──────────────┴──────────────┘
