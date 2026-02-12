@@ -28,7 +28,7 @@ Public Class EnhancedVirtualSpaceForm
     Private waveOut As WaveOutEvent
     Private bufferedWaveProvider As BufferedWaveProvider
     Private isVoiceActive As Boolean = False
-    Private voicePort As Integer = 50000
+    Private voicePort As Integer = 2025*2
     
     ' File sharing
     Private fileUploadQueue As New List(Of String)()
@@ -751,4 +751,5 @@ Public Class LoginForm
         Me.DialogResult = DialogResult.Cancel
         Me.Close()
     End Sub
+
 End Class
