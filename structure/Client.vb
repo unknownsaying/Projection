@@ -16,7 +16,7 @@ Public Class VirtualSpaceClient
     Public Event UserListUpdated As EventHandler(Of List(Of Object))
     Public Event ConnectionStatusChanged As EventHandler(Of Boolean)
     
-    Public Sub New()
+    Sub New()
         userId = Guid.NewGuid().ToString()
     End Sub
     
@@ -57,7 +57,7 @@ Public Class VirtualSpaceClient
         SendMessage(JsonConvert.SerializeObject(joinMessage))
     End Sub
     
-    Public Sub SendChatMessage(message As String)
+    Sub SendChatMessage(message As String)
         Dim chatMessage As New With {
             .MessageType = "message",
             .SenderId = userId,
@@ -69,7 +69,7 @@ Public Class VirtualSpaceClient
         SendMessage(JsonConvert.SerializeObject(chatMessage))
     End Sub
     
-    Public Sub SendMovement(x As Double, y As Double, z As Double)
+    Sub SendMovement(x As Double, y As Double, z As Double)
         Dim moveMessage As New With {
             .MessageType = "move",
             .SenderId = userId,
@@ -80,7 +80,7 @@ Public Class VirtualSpaceClient
         SendMessage(JsonConvert.SerializeObject(moveMessage))
     End Sub
     
-    Public Sub SendWhisper(targetId As String, message As String)
+    Sub SendWhisper(targetId As String, message As String)
         Dim whisperMessage As New With {
             .MessageType = "whisper",
             .SenderId = userId,
@@ -92,7 +92,7 @@ Public Class VirtualSpaceClient
         SendMessage(JsonConvert.SerializeObject(whisperMessage))
     End Sub
     
-    Public Sub UpdateStatus(status As String)
+    Sub UpdateStatus(status As String)
         Dim statusMessage As New With {
             .MessageType = "status",
             .SenderId = userId,
@@ -177,7 +177,7 @@ Public Class VirtualSpaceClient
         End Try
     End Sub
     
-    Public Sub Disconnect()
+    Sub Disconnect()
         isConnected = False
         
         If stream IsNot Nothing Then
@@ -218,3 +218,4 @@ Public Class VirtualSpaceClient
     End Property
     
 End Class
+
