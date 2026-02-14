@@ -10,7 +10,7 @@ Imports System.Security.Cryptography
 Imports NAudio.Wave
 Imports System.Linq
 
-Public Class EnhancedVirtualSpaceServer
+Class EnhancedVirtualSpaceServer
     Private Shared clients As New Dictionary(Of String, ClientInfo)()
     Private Shared voiceClients As New Dictionary(Of String, VoiceClientInfo)()
     Private Shared files As New Dictionary(Of String, FileInfo)()
@@ -24,7 +24,7 @@ Public Class EnhancedVirtualSpaceServer
     ' Database connection
     Private Shared connectionString As String = "Server=localhost;Database=VirtualSpaceDB;Integrated Security=True;"
     
-    Public Class ClientInfo
+    Class ClientInfo
         Public Property Id As String
         Public Property Name As String
         Public Property Email As String
@@ -39,14 +39,14 @@ Public Class EnhancedVirtualSpaceServer
         Public Property LastSeen As DateTime
     End Class
     
-    Public Class VoiceClientInfo
+    Class VoiceClientInfo
         Public Property ClientId As String
         Public Property UdpClient As UdpClient
         Public Property EndPoint As IPEndPoint
         Public Property VoiceEnabled As Boolean
     End Class
     
-    Public Class FileInfo
+    Class FileInfo
         Public Property FileId As String
         Public Property FileName As String
         Public Property FileSize As Long
@@ -57,7 +57,7 @@ Public Class EnhancedVirtualSpaceServer
         Public Property Description As String
     End Class
     
-    Public Class Vector3
+    Class Vector3
         Public Property X As Single
         Public Property Y As Single
         Public Property Z As Single
@@ -67,14 +67,14 @@ Public Class EnhancedVirtualSpaceServer
         End Function
     End Class
     
-    Public Class Quaternion
+    Class Quaternion
         Public Property X As Single
         Public Property Y As Single
         Public Property Z As Single
         Public Property W As Single
     End Class
     
-    Public Class NetworkMessage
+    Class NetworkMessage
         Public Property Type As String
         Public Property SenderId As String
         Public Property Data As Object
@@ -681,4 +681,5 @@ Public Class EnhancedVirtualSpaceServer
         
         Console.WriteLine("All servers stopped.")
     End Sub
+
 End Class
